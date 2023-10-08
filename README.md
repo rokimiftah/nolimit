@@ -52,4 +52,6 @@ npm run seed
 
 ```bash
 npm run dev
+
+http://localhost:3000/api/<:version>/countries
 ```
