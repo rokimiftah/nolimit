@@ -115,7 +115,7 @@ const run = async () => {
 
   await prisma.country.upsert({
     where: {
-      code: 'AG'
+      code: 'AL'
     },
     update: {},
     create: {
