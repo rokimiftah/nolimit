@@ -19,9 +19,15 @@ app.get('/', (req: Request, res: Response) => {
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(
-    'Endpoint: ',
+    'Endpoint Axios\t(v1)\t: ',
     chalk.bgWhite(
-      chalk.black('https://nolimit.projects.rokimiftah.id/countries\n')
+      chalk.black('https://nolimit.projects.rokimiftah.id/api/v1/countries')
+    )
+  );
+  console.log(
+    'Endpoint Prisma\t(v2)\t: ',
+    chalk.bgWhite(
+      chalk.black('https://nolimit.projects.rokimiftah.id/api/v2/countries\n')
     )
   );
 });
