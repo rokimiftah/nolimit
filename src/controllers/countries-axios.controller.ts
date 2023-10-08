@@ -65,6 +65,6 @@ export const getCountryWithAxios = async (req: Request, res: Response) => {
     res.json({ data });
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).json({ error: 'An error occurred while fetching data' });
+    res.status(500).json({ error });
   }
 };
