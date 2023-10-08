@@ -28,13 +28,13 @@ app.use('/api/v2/countries', countryRoutesPrisma);
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(
-    'Endpoint Axios\t(v1)\t: ',
+    'Endpoint Axios\t(v1): ',
     chalk.bgWhite(
       chalk.black('https://nolimit.projects.rokimiftah.id/api/v1/countries')
     )
   );
   console.log(
-    'Endpoint Prisma\t(v2)\t: ',
+    'Endpoint Prisma\t(v2): ',
     chalk.bgWhite(
       chalk.black('https://nolimit.projects.rokimiftah.id/api/v2/countries\n')
     )
