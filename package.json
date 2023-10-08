@@ -1,0 +1,11 @@
+{
+  "name": "nolimit",
+  "version": "1.0.0",
+  "description": "Backend Developer Test at NoLimit",
+  "license": "ISC",
+  "author": "Roki Miftah Kamaludin",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
