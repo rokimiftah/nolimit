@@ -3,6 +3,8 @@ import express, { Express, Request, Response } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
+import countryRoutesAxios from './routes/countries-axios.route';
+
 const chalk = require('chalk');
 
 const app: Express = express();
@@ -15,6 +17,10 @@ app.use(express.json());
 app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Roki Miftah Kamaludin - NoLimit' });
 });
+
+// Direct using Axios
+app.use('/api/v1/countries', countryRoutesAxios);
+
 
 const PORT = 3000;
 app.listen(PORT, () => {
