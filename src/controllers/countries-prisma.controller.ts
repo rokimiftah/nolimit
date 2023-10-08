@@ -56,7 +56,11 @@ export const getCountryWithPrisma = async (req: Request, res: Response) => {
       }
     });
 
-    res.json({ data: { country } });
+    if (!country) {
+      res.status(404).json({ message: 'Country not found!' });
+    }
+
+    res.status(200).json({ data: { country } });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error });
