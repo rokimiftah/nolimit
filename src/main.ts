@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 import countryRoutesAxios from './routes/countries-axios.route';
+import countryRoutesPrisma from './routes/countries-prisma.route';
 
 const chalk = require('chalk');
 
@@ -21,6 +22,8 @@ app.get('/', (req: Request, res: Response) => {
 // Direct using Axios
 app.use('/api/v1/countries', countryRoutesAxios);
 
+// Persistence in database using Prisma ORM
+app.use('/api/v2/countries', countryRoutesPrisma);
 
 const PORT = 3000;
 app.listen(PORT, () => {
