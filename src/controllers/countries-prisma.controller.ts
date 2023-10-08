@@ -27,3 +27,38 @@ export const getAllCountriesWithPrisma = async (
   }
 };
 
+// Receive country by code with Prisma
+export const getCountryWithPrisma = async (req: Request, res: Response) => {
+  try {
+    const code = req.params.code.toUpperCase();
+
+    const country = await prisma.country.findUnique({
+      where: {
+        code
+      },
+      select: {
+        awsRegion: true,
+        capital: true,
+        code: true,
+        currencies: true,
+        currency: true,
+        emoji: true,
+        emojiU: true,
+        languages: {
+          select: {
+            name: true,
+            native: true
+          }
+        },
+        name: true,
+        phone: true,
+        phones: true
+      }
+    });
+
+    res.json({ data: { country } });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error });
+  }
+};
